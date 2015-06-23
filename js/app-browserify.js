@@ -50,6 +50,7 @@ class Chat extends React.Component {
     }
     componentWillMount(){
         subscribe('meeting_room', (data) => {
+            data.text.replace(/:heart:/ig, '<img src="https://media4.giphy.com/media/i3FRhIFWSXHMI/200.gif">')
             var newMessages = this.state.messages.concat(data)
             this.setState({messages: newMessages})
         })
